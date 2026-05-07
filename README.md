@@ -1,6 +1,6 @@
 # Autonomous Customer Support Agent
 
-> An AI agent that handles customer support tickets end-to-end — no human needed for routine issues, automatic escalation for anything sensitive.
+> An AI agent that handles customer support tickets end-to-end  no human needed for routine issues, automatic escalation for anything sensitive.
 
 ---
 
@@ -165,18 +165,3 @@ In a real product, the "human reply" would come from a Slack message, a web dash
 | [Groq + Llama 3.3 70B](https://console.groq.com) | Free LLM that classifies tickets, drafts emails, and makes decisions |
 | [LangChain](https://python.langchain.com) | Connects the LLM to the graph and handles structured outputs |
 
----
-
-## Want to extend it?
-
-**Add a new tool** (e.g. check live service status)
-→ Add the function to `tools.py`, call it inside a node in `nodes.py`
-
-**Add a new step** (e.g. sentiment analysis)
-→ Write the function in `nodes.py`, register it in `graph.py`, wire it into the chain
-
-**Use a different AI model**
-→ Swap `ChatGroq` in `nodes.py` for `ChatOpenAI`, `ChatGoogleGenerativeAI`, etc.
-
-**Make state persist across restarts**
-→ Replace `MemorySaver` in `graph.py` with `SqliteSaver`
